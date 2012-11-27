@@ -1,4 +1,4 @@
-Pandemic
+== Pandemic
 
 A Ruby on Rails version of the popular board game where players work together to eradicate diseases from the world.
 
