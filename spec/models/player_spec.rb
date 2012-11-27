@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Player do
-  context "when creating" do
+  context "when created" do
     it "requires a color" do
       player = Player.new
       player.valid?

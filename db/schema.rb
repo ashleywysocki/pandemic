@@ -11,13 +11,54 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121127055853) do
+ActiveRecord::Schema.define(:version => 20121127081350) do
+
+  create_table "cities", :force => true do |t|
+    t.string   "name"
+    t.string   "color"
+    t.integer  "game_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "disease_cubes", :force => true do |t|
+    t.integer  "disease_id"
+    t.integer  "city_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "diseases", :force => true do |t|
+    t.string   "color"
+    t.boolean  "is_cured"
+    t.boolean  "is_eradicated"
+    t.integer  "game_id"
+    t.string   "name"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "players", :force => true do |t|
     t.string   "color"
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "game_id"
+  end
+
+  create_table "research_stations", :force => true do |t|
+    t.integer  "city_id"
+    t.integer  "game_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "roles", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "game_id"
   end
 
 end
