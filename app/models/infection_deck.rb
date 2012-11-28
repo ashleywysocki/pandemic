@@ -1,3 +1,5 @@
-class InfectionDeck < ActiveRecord::Base
-  # attr_accessible :title, :body
+class InfectionDeck < Deck
+  attr_accessible :game_id
+  
+  has_many :cities
 end

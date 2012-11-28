@@ -11,15 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121128073111) do
+ActiveRecord::Schema.define(:version => 20121128083335) do
 
   create_table "cities", :force => true do |t|
     t.string   "name"
     t.string   "color"
-    t.integer  "game_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.integer  "player_deck_id"
+    t.integer  "infection_deck_id"
+  end
+
+  create_table "decks", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "game_id"
   end
 
   create_table "disease_cubes", :force => true do |t|

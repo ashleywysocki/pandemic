@@ -12,5 +12,10 @@ describe Game do
       game = Game.create
       game.player_deck should_not == nil
     end
+    
+    it "creates four diseases" do
+      game = Game.create
+      game.diseases.size.should == 4
+    end
   end
 end
