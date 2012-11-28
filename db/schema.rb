@@ -11,14 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121127081350) do
+ActiveRecord::Schema.define(:version => 20121128073111) do
 
   create_table "cities", :force => true do |t|
     t.string   "name"
     t.string   "color"
     t.integer  "game_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.integer  "player_deck_id"
   end
 
   create_table "disease_cubes", :force => true do |t|
@@ -36,6 +37,28 @@ ActiveRecord::Schema.define(:version => 20121127081350) do
     t.string   "name"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+  end
+
+  create_table "games", :force => true do |t|
+    t.integer  "outbreak_number"
+    t.integer  "infection_rate"
+    t.boolean  "won_game"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.boolean  "lost_game"
+    t.integer  "number_players"
+  end
+
+  create_table "infection_decks", :force => true do |t|
+    t.integer  "game_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "player_decks", :force => true do |t|
+    t.integer  "game_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "players", :force => true do |t|

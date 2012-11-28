@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-describe Disease do
+describe InfectionDeck do
 end
